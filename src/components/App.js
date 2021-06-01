@@ -7,7 +7,6 @@ import Dashboard from "./Dashboard"
 import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
-// import UpdateProfile from "./UpdateProfile"
 import 'date-fns';
 import Homepage from './homepage';
 
@@ -21,10 +20,7 @@ function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              {/* <PrivateRoute exact path="/" component={Dashboard} /> */}
               <PrivateRoute exact path="/" component={Homepage} />    
-              {/* <Homepage/> */}
-              {/* <PrivateRoute path="/update-profile" component={UpdateProfile} /> */}
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
