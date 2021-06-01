@@ -3,7 +3,6 @@ import firebase from '../firebase';
 import SearchField from "react-search-field";
 import SearchIcon from '@material-ui/icons/Search';
 import SearchBar from "material-ui-search-bar";
-// import {Last5} from './last5';
 import './App.css';
 
 export const Searchbox = (property) => {
@@ -15,8 +14,6 @@ export const Searchbox = (property) => {
         const data = property.data;
         data.sort(function(a, b){return a.id-b.id});
         const name = property.name; 
-        // console.log('dataSearchBox',data)
-        // console.log('name',name)
         React.useEffect(() => {
             setFound(false);
             console.log("Change");
@@ -80,13 +77,10 @@ export const Searchbox = (property) => {
 
         </div>
         <div className="empty-div"></div>
-        {/* /////////////////////////////////////////// */}
         {query ? ( 
         <div>
 
         {data.map((x,idx)=>
-            // x.selectedName===query ? (<div className="test-boxy1">{x.selectedName}</div>) : (<div></div>)
-            
             x.selectedName===query ? ( 
             <div className="searchbox">
                 <ol>
@@ -104,10 +98,8 @@ export const Searchbox = (property) => {
             </div>
              ) : (<div>{(found===false && idx===data.length-1) ? <div><i>Sorry patient not found...</i></div>:<div></div>}</div>)
         )}        
-        
         </div>)
         : (<div></div>)} 
-        {/* /////////////////////////////////////////// */}
         {showResults ? ( 
         <div className="searchbox">
             <ol>
@@ -123,7 +115,6 @@ export const Searchbox = (property) => {
                 )}
             </ol>
         </div>) : (<div></div>)}
-        {/* /////////////////////////////////////////// */} 
         </div>
     )
 }
