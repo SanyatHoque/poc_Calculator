@@ -34,8 +34,6 @@ export const Searchbox = (property) => {
             setShowResults(false);
             setQuery(search);
             setSearch('');
-            // console.log('query_res',query)
-            // const search_lowercase = search.toLocaleLowerCase()
             data.map((x)=>{
                 // console.log('query',search,'selectedName',x.selectedName)
                 if (x.selectedName===search) {
@@ -51,12 +49,6 @@ export const Searchbox = (property) => {
         <div>
         <div className="empty-div"></div>
         <div className="dispay-flex">
-        {/* <SearchBar
-        value={this.state.search} 
-        onChange={(e) => this.setState({ value: e })}
-        onRequestSearch={() => setSearch(this.state.value)}
-        style={{marginLeft:'15%'}}
-        /> */}
         <form className="topnav" onSubmit={onClickSearch} >
             <input className="SearchBar" type="text" placeholder="Type Patient Name Here..." value={search.toLocaleLowerCase()} onChange={(e)=>setSearch(e.target.value)}/>
             <button className="SearchIcon" type="submit">Search</button>
